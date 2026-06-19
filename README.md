@@ -1,6 +1,12 @@
 # TutorMatch
 
+A website where students can find tutors and tutors can list their qualifications to get started.
+
 A professional tutor marketplace where **students** can find qualified tutors and **tutors** can list their qualifications, subjects, and hourly rates.
+
+## Deploy for free
+
+See **[DEPLOY.md](DEPLOY.md)** for step-by-step instructions (Render + Vercel, $0).
 
 ## Tech Stack
 
@@ -19,7 +25,7 @@ A professional tutor marketplace where **students** can find qualified tutors an
 - Students receive email when a tutor accepts or declines
 - Rate limiting, helmet security headers, and input validation
 
-## Getting Started
+## Getting Started (local)
 
 ### 1. Configure the backend
 
@@ -33,12 +39,6 @@ Edit `backend/.env` and set:
 
 - **JWT_SECRET** — a long random string (32+ characters)
 - **SMTP_*** — your email provider settings (see below)
-
-Remove old demo data (if any):
-
-```bash
-npm run seed
-```
 
 Start the API:
 
@@ -75,8 +75,6 @@ SMTP_PASS=your-16-char-app-password
 EMAIL_FROM=TutorMatch <your-email@gmail.com>
 ```
 
-When email is configured, tutors receive an email for each new inquiry, and students receive an email when their inquiry is accepted or declined.
-
 ## Security
 
 - Passwords hashed with bcrypt (12 rounds), minimum 8 characters with letters and numbers
@@ -89,12 +87,8 @@ When email is configured, tutors receive an email for each new inquiry, and stud
 ## Project Structure
 
 ```
-WEBSITE/
-├── backend/
-│   ├── server.js
-│   ├── services/email.js
-│   ├── middleware/
-│   └── routes/
-└── frontend/
-    └── src/
+TutorMatch-app/
+├── backend/          # Node.js API
+├── frontend/         # React website
+└── DEPLOY.md         # Free deployment guide
 ```
